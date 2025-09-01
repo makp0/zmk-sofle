@@ -6,9 +6,23 @@ on:
       - "config/**"
       - .github/workflows/draw.yml
       - keymap_drawer.config.yaml
+      - keymap_drawer_light.config.yaml
 
 jobs:
-  draw:
+  draw-light:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write
+    with:
+      keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer_light.config.yaml"
+      commit_message: "[Draw] ${{ github.event.head_commit.message }}"
+      destination: "commit"
+      fail_on_error: ${{ fromJSON(true) }}
+      draw_args: "eyelash_sofle:-o keymap-drawer/eyelash_sofle_light.svg"
+
+  draw-dark:
+    needs: draw-light
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write
@@ -17,3 +31,4 @@ jobs:
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
+      draw_args: "eyelash_sofle:-o keymap-drawer/eyelash_sofle_dark.svg"
