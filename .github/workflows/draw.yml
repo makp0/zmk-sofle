@@ -18,7 +18,7 @@ jobs:
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
-      draw_args: "eyelash_sofle:--config-yaml \"{draw_config: {dark_mode: false}}\""
+      output_folder: "keymap-drawer/light"
 
   draw-dark:
     needs: draw-light
@@ -31,4 +31,5 @@ jobs:
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
-      draw_args: "eyelash_sofle:--config-yaml \"{draw_config: {dark_mode: true}}\"
+      draw_args: "eyelash_sofle:--config-yaml \"{draw_config: {dark_mode: true}}\""
+      output_folder: "keymap-drawer/dark"
