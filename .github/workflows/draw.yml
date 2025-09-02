@@ -27,10 +27,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Copy light config
+        run: cp -f keymap_drawer.config.yaml keymap_drawer.dark.config.yaml
+
       - name: Update config for dark mode
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: keymap_drawer.config.yaml
+          valueFile: keymap_drawer.dark.config.yaml
           propertyPath: draw_config.dark_mode
           value: true
           commitChange: true
