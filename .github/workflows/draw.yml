@@ -6,7 +6,6 @@ on:
       - "config/**"
       - .github/workflows/draw.yml
       - keymap_drawer.config.yaml
-      - keymap_drawer_light.config.yaml
 
 jobs:
   draw-light:
@@ -15,11 +14,11 @@ jobs:
       contents: write
     with:
       keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer_light.config.yaml"
+      config_path: "keymap_drawer.config.yaml"
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
-      draw_args: "eyelash_sofle:-o keymap-drawer/eyelash_sofle_light.svg"
+      draw_args: "eyelash_sofle:--config-yaml \"{draw_config: {dark_mode: false}}\" -o keymap-drawer/eyelash_sofle_light.svg"
 
   draw-dark:
     needs: draw-light
@@ -28,7 +27,8 @@ jobs:
       contents: write
     with:
       keymap_patterns: "config/*.keymap"
+      config_path: "keymap_drawer.config.yaml"
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
-      draw_args: "eyelash_sofle:-o keymap-drawer/eyelash_sofle_dark.svg"
+      draw_args: "eyelash_sofle:--config-yaml \"{draw_config: {dark_mode: true}}\" -o keymap-drawer/eyelash_sofle_dark.svg"
