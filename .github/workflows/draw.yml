@@ -22,15 +22,25 @@ jobs:
 
   draw-dark:
     needs: draw-light
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    with:
-      keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer.config.yaml"
-      commit_message: "[Draw] ${{ github.event.head_commit.message }}"
-      destination: "commit"
-      fail_on_error: ${{ fromJSON(true) }}
-      draw_args: "eyelash_sofle:--config-yaml \"{draw_config: {dark_mode: true}}\""
-      output_folder: "keymap-drawer/dark"
-      amend_commit: ${{ fromJSON(true) }}
+    container:
+      image: python:3.10
+    steps:
+      - name: Update values.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: keymap_drawer.config.yaml
+          propertyPath: dark_mode
+          value: true
+
+      - name: Draw keymaps with dark mode
+        uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+        with:
+          keymap_patterns: "config/*.keymap"
+          config_path: "keymap_drawer.config.yaml"
+          commit_message: "[Draw] ${{ github.event.head_commit.message }}"
+          destination: "commit"
+          fail_on_error: ${{ fromJSON(true) }}
+          output_folder: "keymap-drawer/dark"
