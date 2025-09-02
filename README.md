@@ -27,6 +27,6 @@ For 3D printed model files or any issues and malfunctions with the keyboard, ple
 
 ## Sofle Keymap
 
-<img src="keymap-drawer/eyelash_sofle_dark.svg" >
+<img src="keymap-drawer/dark/eyelash_sofle.svg" >
 
-[Light mode version](keymap-drawer/eyelash_sofle_light.svg)
+[Light mode version](keymap-drawer/light/eyelash_sofle.svg)
