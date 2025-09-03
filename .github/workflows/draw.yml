@@ -9,7 +9,7 @@ on:
 
 jobs:
   draw-light:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    uses: makp0/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write
     with:
@@ -24,9 +24,6 @@ jobs:
     needs: draw-light
     runs-on: ubuntu-latest
     steps:
-      - name: Wait 5 seconds
-        run: sleep 5s
-
       - name: Checkout
         uses: actions/checkout@v5
 
@@ -45,12 +42,9 @@ jobs:
         with:
           default_author: github_actions
 
-      - name: Wait 10 seconds
-        run: sleep 10s
-
   draw-dark:
     needs: prepare-dark-config
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    uses: makp0/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write
     with:
