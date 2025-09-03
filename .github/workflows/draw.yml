@@ -58,5 +58,6 @@ jobs:
       config_path: "keymap-drawer/config.dark.yaml"
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
-      fail_on_error: ${{ fromJSON(true) }}
+      fail_on_error: true
       output_folder: "keymap-drawer/dark"
+      amend_commit: true
