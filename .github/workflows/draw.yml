@@ -5,7 +5,7 @@ on:
     paths:
       - "config/**"
       - .github/workflows/draw.yml
-      - keymap_drawer.config.yaml
+      - keymap-drawer/config.yaml
 
 jobs:
   draw-light:
@@ -14,7 +14,7 @@ jobs:
       contents: write
     with:
       keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer.config.yaml"
+      config_path: "keymap-drawer/config.yaml"
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
@@ -28,12 +28,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Copy light config
-        run: cp -f keymap_drawer/config.yaml keymap_drawer/config.dark.yaml
+        run: cp -f keymap-drawer/config.yaml keymap-drawer/config.dark.yaml
 
       - name: Update config for dark mode
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: keymap_drawer/config.dark.yaml
+          valueFile: keymap-drawer/config.dark.yaml
           propertyPath: draw_config.dark_mode
           value: true
           commitChange: false
@@ -52,7 +52,7 @@ jobs:
       contents: write
     with:
       keymap_patterns: "config/*.keymap"
-      config_path: "keymap_drawer/config.dark.yaml"
+      config_path: "keymap-drawer/config.dark.yaml"
       commit_message: "[Draw] ${{ github.event.head_commit.message }}"
       destination: "commit"
       fail_on_error: ${{ fromJSON(true) }}
