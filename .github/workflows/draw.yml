@@ -24,8 +24,11 @@ jobs:
     needs: draw-light
     runs-on: ubuntu-latest
     steps:
+      - name: Wait 5 seconds
+        run: sleep 5s
+
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Copy light config
         run: cp -f keymap-drawer/config.yaml keymap-drawer/config.dark.yaml
