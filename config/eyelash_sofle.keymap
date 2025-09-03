@@ -38,11 +38,11 @@
         main_layer {
             label = "main";
             bindings = <
-&kp GRAVE   &kp N1        &kp N2        &kp N3            &kp N4     &kp N5     &mmv MOVE_UP    &kp N6     &kp N7         &kp N8       &kp N9     &kp N0    &kp RIGHT_BRACKET
-&kp TAB     &kp Q         &kp W         &kp E             &kp R      &kp T      &mmv MOVE_DOWN  &kp Y      &kp U          &kp I        &kp O      &kp P     &kp LEFT_BRACKET
-&kp ESCAPE  &kp A         &kp S         &kp D             &kp F      &kp G      &mmv MOVE_LEFT  &kp H      &kp J          &kp K        &kp L      &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z         &kp X         &kp C             &kp V      &kp B      &mmv MOVE_LEFT  &kp N      &kp M          &kp COMMA    &kp DOT    &kp FSLH  &kp BACKSLASH
-&kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp SPACE  &kp DEL    &mkp LCLK       &kp ENTER  &kp BACKSPACE  &lt 1 MINUS  &kp EQUAL  &kp INS
+&kp GRAVE   &kp N1        &kp N2        &kp N3            &kp N4     &kp N5     &mmv MOVE_UP     &kp N6     &kp N7         &kp N8       &kp N9     &kp N0    &kp RIGHT_BRACKET
+&kp TAB     &kp Q         &kp W         &kp E             &kp R      &kp T      &mmv MOVE_DOWN   &kp Y      &kp U          &kp I        &kp O      &kp P     &kp LEFT_BRACKET
+&kp ESCAPE  &kp A         &kp S         &kp D             &kp F      &kp G      &mmv MOVE_LEFT   &kp H      &kp J          &kp K        &kp L      &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z         &kp X         &kp C             &kp V      &kp B      &mmv MOVE_RIGHT  &kp N      &kp M          &kp COMMA    &kp DOT    &kp FSLH  &kp BACKSLASH
+&kp C_MUTE  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp SPACE  &kp DEL    &mkp LCLK        &kp ENTER  &kp BACKSPACE  &lt 1 MINUS  &kp EQUAL  &kp INS
             >;
         };
 
@@ -61,7 +61,7 @@
             label = "hardware";
             bindings = <
 &none            &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &none  &out OUT_TOG     &out OUT_BLE     &out OUT_USB  &none  &none  &bt BT_CLR
-&bl BL_TOG       &bl BL_INC    &bl BL_DEC    &bl BL_SET 100   &none            &none              &none  &none            &none            &none         &none  &none  &none
+&bl BL_TOG       &bl BL_INC       &bl BL_DEC       &bl BL_SET 100   &none            &none              &none  &none            &none            &none         &none  &none  &none
 &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_BRI    &none  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none         &none  &none  &none
 &none            &none            &none            &none            &none            &none              &none  &none            &none            &none         &none  &none  &none
 &none            &none            &none            &none            &none            &none              &none  &none            &none            &none         &none  &none
