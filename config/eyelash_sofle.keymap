@@ -11,6 +11,7 @@
 
 #define MAIN 0
 #define SECONDARY 1
+#define HARDWARE 2
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -29,8 +30,6 @@
 };
 
 / {
-    // Two-layer layout: main + secondary
-
     keymap {
         compatible = "zmk,keymap";
 
