@@ -147,7 +147,7 @@ layers:
   - '&bl BL_TOG'
   - '&bl BL_BRT_UP'
   - '&bl BL_BRT_DN'
-  - '&bl BL_SET 100'
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
