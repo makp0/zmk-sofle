@@ -145,9 +145,9 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:bluetooth-off$$
   - '&bl BL_TOG'
-  - '&bl BL_BRT_UP'
-  - '&bl BL_BRT_DN'
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - '&bl BL_INC'
+  - '&bl BL_DEC'
+  - '&bl BL_SET 100'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
