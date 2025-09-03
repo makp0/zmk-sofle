@@ -37,13 +37,6 @@
         main_layer {
             label = "main";
 
-            // 64-key ASCII map (center column shown between bars)
-            // |   `   |  1  |  2  |  3  |  4  |  5  |  Up   |  6  |  7  |  8  |  9  |  0  |  Del  |
-            // |  ESC  |  Q  |  W  |  E  |  R  |  T  | Down  |  Y  |  U  |  I  |  O  |  P  | BSPC  |
-            // |  TAB  |  A  |  S  |  D  |  F  |  G  | Left  |  H  |  J  |  K  |  L  |  ;  |  '    |
-            // | SHIFT |  Z  |  X  |  C  |  V  |  B  | Right |  N  |  M  |  ,  |  .  |  /  | SHIFT |
-            // | C_MUTE| LCTL| LALT| LGUI|Sec  |SPACE| ENTER |SPACE| Sec  | RCTL|  RALT|  RGUI |
-
             bindings = <
 &kp GRAVE   &kp N1        &kp N2        &kp N3            &kp N4     &kp N5     &mmv MOVE_UP    &kp N6     &kp N7         &kp N8       &kp N9     &kp N0    &kp RIGHT_BRACKET
 &kp TAB     &kp Q         &kp W         &kp E             &kp R      &kp T      &mmv MOVE_DOWN  &kp Y      &kp U          &kp I        &kp O      &kp P     &kp LEFT_BRACKET
@@ -55,12 +48,6 @@
 
         secondary_layer {
             label = "secondary";
-
-            // |  F11  |  F1 |  F2 |  F3 |  F4 |  F5 |  Up   |  F6 |  F7 |  F8 |  F9 |  F10 |  F12 |
-            // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 | Down  | PgUp| Home|  Up | End |      |      |
-            // | RGB_T | H-  | H+  | S-  | S+  | EFF | Left  | PgDn| Left| Down| Right|  Del | BSPC |
-            // |  B-   |  B+ |     |     |     |     | Right |     |     |     |     |      |      |
-            // |       |     |     |     |     |     | PSCRN |     |     |     |     |      |
 
             bindings = <
 &kp F11          &kp F1           &kp F2           &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &kp F12
