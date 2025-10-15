@@ -1,4 +1,4 @@
-name: '@ Draw Keymap'
+name: 'Draw Keymap'
 on:
   workflow_dispatch:
   push:
