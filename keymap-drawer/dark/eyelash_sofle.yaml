@@ -63,7 +63,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '-', h: secondary, s: _}
-  - {t: '=', s: +}
+  - {t: '=', h: hardware, s: +}
   - INS
   secondary:
   - F11
@@ -192,7 +192,7 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: held}
+  - {t: '$$mdi:minus-circle-outline$$', type: held alternate}
   - {t: '$$mdi:minus-circle-outline$$', type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   windows:
@@ -257,6 +257,6 @@ layers:
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '-', h: secondary, s: _}
-  - {t: '=', s: +}
+  - {t: '-', h: secondary, s: _, type: held}
+  - {t: '=', s: +, type: held}
   - INS
