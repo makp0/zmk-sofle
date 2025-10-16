@@ -32,7 +32,6 @@
         tog_windows_layer {
             bindings = <&tog 3>;
             key-positions = <15 61>;
-            layers = <1>;
         };
     };
 
