@@ -81,7 +81,7 @@ layers:
   - F12
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: windows, h: toggle}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -261,5 +261,6 @@ layers:
   - {t: '=', s: +}
   - INS
 combos:
-- p: [15, 61]
-  k: {t: windows, h: toggle}
+- p: [61, 15]
+  k: {t: main, h: toggle}
+  l: [windows]
