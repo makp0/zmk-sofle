@@ -261,6 +261,6 @@ layers:
   - {t: '=', s: +}
   - INS
 combos:
-- p: [61, 15]
+- p: [61, 63]
   k: {t: main, h: toggle}
   l: [windows]
