@@ -31,9 +31,8 @@
 
         to_main {
             bindings = <&to 0>;
-            key-positions = <61 15>;
+            key-positions = <61 63>;
             layers = <3>;
-            timeout-ms = <1111>;
         };
     };
 
