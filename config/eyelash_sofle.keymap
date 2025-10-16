@@ -26,6 +26,16 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        tog_windows_layer {
+            bindings = <&tog 3>;
+            key-positions = <62 15>;
+            layers = <0 3>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -44,7 +54,7 @@
             label = "secondary";
             bindings = <
 &kp F11   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &trans     &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &kp F12
-&trans    &none   &to 3   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END    &none    &none
+&trans    &none   &none   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END    &none    &none
 &kp CLCK  &none   &none   &none   &none   &none     &trans     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &none    &none
 &trans    &none   &none   &none   &none   &none     &trans     &none      &none     &none     &none      &none    &none
 &none     &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &trans     &trans    &none     &mo 2      &trans
@@ -65,11 +75,11 @@
         windows_layer {
             label = "windows";
             bindings = <
-&kp GRAVE   &kp N1            &kp N2     &kp N3     &kp N4        &kp N5          &mmv MOVE_UP     &kp N6     &kp N7         &kp N8     &kp N9     &kp N0    &kp LEFT_BRACE
-&kp ESCAPE  &kp Q             &kp W      &kp E      &kp R         &kp T           &mmv MOVE_DOWN   &kp Y      &kp U          &kp I      &kp O      &kp P     &kp RIGHT_BRACE
-&kp TAB     &kp A             &kp S      &kp D      &kp F         &kp G           &mmv MOVE_LEFT   &kp H      &kp J          &kp K      &kp L      &kp SEMI  &kp SQT
-&kp LSHFT   &kp Z             &kp X      &kp C      &kp V         &kp B           &mmv MOVE_RIGHT  &kp N      &kp M          &kp COMMA  &kp DOT    &kp FSLH  &kp LG(BACKSLASH)
-&kp C_MUTE  &kp LEFT_CONTROL  &kp LCTRL  &kp SPACE  &kp LEFT_ALT  &kp LEFT_WIN    &mkp LCLK        &kp ENTER  &kp BACKSPACE  &to 0      &kp EQUAL  &kp INS
+&kp GRAVE   &kp N1            &kp N2     &kp N3     &kp N4        &kp N5          &mmv MOVE_UP     &kp N6     &kp N7         &kp N8       &kp N9     &kp N0    &kp LEFT_BRACE
+&kp ESCAPE  &kp Q             &kp W      &kp E      &kp R         &kp T           &mmv MOVE_DOWN   &kp Y      &kp U          &kp I        &kp O      &kp P     &kp RIGHT_BRACE
+&kp TAB     &kp A             &kp S      &kp D      &kp F         &kp G           &mmv MOVE_LEFT   &kp H      &kp J          &kp K        &kp L      &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z             &kp X      &kp C      &kp V         &kp B           &mmv MOVE_RIGHT  &kp N      &kp M          &kp COMMA    &kp DOT    &kp FSLH  &kp LG(BACKSLASH)
+&kp C_MUTE  &kp LEFT_CONTROL  &kp LCTRL  &kp SPACE  &kp LEFT_ALT  &kp LEFT_WIN    &mkp LCLK        &kp ENTER  &kp BACKSPACE  &lt 1 MINUS  &kp EQUAL  &kp INS
             >;
         };
     };
