@@ -263,4 +263,3 @@ layers:
 combos:
 - p: [15, 61]
   k: {t: windows, h: toggle}
-  l: [secondary]
