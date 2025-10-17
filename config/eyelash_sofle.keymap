@@ -53,10 +53,10 @@
         secondary_layer {
             label = "secondary";
             bindings = <
-&kp F11   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &trans     &kp F6     &kp F7    &kp F8    &kp F9     &kp F10  &kp F12
-&trans    &none   &to 3   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END    &none    &none
-&kp CLCK  &none   &none   &none   &none   &none     &trans     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &none    &none
-&trans    &none   &none   &none   &none   &none     &trans     &none      &none     &none     &none      &none    &none
+&kp F11   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &trans     &kp F6     &kp F7    &kp F8    &kp F9     &kp F10          &kp F12
+&trans    &none   &to 3   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp PRINTSCREEN  &none
+&kp CLCK  &none   &none   &none   &none   &none     &trans     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &none            &none
+&trans    &none   &none   &none   &none   &none     &trans     &none      &none     &none     &none      &none            &none
 &none     &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &trans     &trans    &none     &mo 2      &trans
             >;
         };
