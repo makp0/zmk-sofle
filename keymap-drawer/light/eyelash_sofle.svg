@@ -634,9 +634,7 @@ rect.held, rect.combo.held {
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
 <text x="0" y="-4" class="key tap">=</text>
-<a href="#hardware">
-<text x="0" y="24" class="key hold layer-activator"><tspan style="font-size: 75%">hardware</tspan></text>
-</a><text x="0" y="-24" class="key shifted">+</text>
+<text x="0" y="-24" class="key shifted">+</text>
 </g>
 <g transform="translate(784, 259)" class="key keypos-63">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
@@ -723,12 +721,10 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-9" y="-13" height="18" width="18.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(140, 91)" class="key keypos-15">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
-<a href="#windows">
-<text x="0" y="-4" class="key tap layer-activator"><tspan style="font-size: 86%">windows</tspan></text>
-</a><text x="0" y="24" class="key hold">toggle</text>
+<g transform="translate(140, 91)" class="key none keypos-15">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key none"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-9" y="-13" height="18" width="18.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(196, 84)" class="key none keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key none side"/>
@@ -970,10 +966,12 @@ rect.held, rect.combo.held {
 <a href="#hardware">
 <text x="0" y="-4" class="key tap layer-activator"><tspan style="font-size: 75%">hardware</tspan></text>
 </a></g>
-<g transform="translate(784, 259)" class="key trans keypos-63">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key trans"/>
-<use href="#mdi:transfer" xlink:href="#mdi:transfer" x="-9" y="-13" height="18" width="18.0" class="key trans tap glyph mdi:transfer"/>
+<g transform="translate(784, 259)" class="key keypos-63">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key"/>
+<a href="#windows">
+<text x="0" y="-4" class="key tap layer-activator"><tspan style="font-size: 86%">windows</tspan></text>
+</a><text x="0" y="24" class="key hold">toggle</text>
 </g>
 </g>
 </g>
@@ -1320,10 +1318,10 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key none"/>
 <use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-9" y="-13" height="18" width="18.0" class="key none tap glyph mdi:minus-circle-outline"/>
 </g>
-<g transform="translate(672, 259)" class="key held alternate keypos-61">
-<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held alternate side"/>
-<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held alternate"/>
-<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-9" y="-13" height="18" width="18.0" class="key held alternate tap glyph mdi:minus-circle-outline"/>
+<g transform="translate(672, 259)" class="key held keypos-61">
+<rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
+<rect rx="4" ry="4" x="-20" y="-24" width="40" height="40" class="key held"/>
+<use href="#mdi:minus-circle-outline" xlink:href="#mdi:minus-circle-outline" x="-9" y="-13" height="18" width="18.0" class="key held tap glyph mdi:minus-circle-outline"/>
 </g>
 <g transform="translate(728, 252)" class="key held keypos-62">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key held side"/>
@@ -1686,12 +1684,12 @@ rect.held, rect.combo.held {
 <text x="0" y="-4" class="key tap">INS</text>
 </g>
 <g class="combo combopos-0">
-<path d="M728,259 l-37,0" class="combo"/>
-<path d="M728,259 l37,0" class="combo"/>
-<rect rx="6" ry="6" x="714" y="246" width="28" height="26" class="combo"/>
+<path d="M603,276 l50,-13" class="combo"/>
+<path d="M603,276 l-50,13" class="combo"/>
+<rect rx="6" ry="6" x="589" y="264" width="28" height="26" class="combo"/>
 <a href="#main">
-<text x="728" y="259" class="combo tap layer-activator">main</text>
-</a><text x="728" y="270" class="combo hold">toggle</text>
+<text x="603" y="276" class="combo tap layer-activator">main</text>
+</a><text x="603" y="288" class="combo hold">toggle</text>
 </g>
 </g>
 </g>
