@@ -209,7 +209,7 @@ layers:
   - {t: '9', s: (}
   - {t: '0', s: )}
   - '{'
-  - $$mdi:keyboard-esc$$
+  - $$mdi:keyboard-tab$$
   - Q
   - W
   - E
@@ -222,7 +222,7 @@ layers:
   - O
   - P
   - '}'
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - A
   - S
   - D
@@ -249,11 +249,11 @@ layers:
   - {t: /, s: '?'}
   - {t: Gui+\, s: Gui+|}
   - $$mdi:volume-off$$
-  - Z
-  - X
+  - CLCK
+  - $$mdi:apple-keyboard-option$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:keyboard-space$$
-  - $$mdi:apple-keyboard-option$$
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
