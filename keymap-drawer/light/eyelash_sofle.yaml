@@ -247,7 +247,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - {t: Gui+\, s: Gui+|}
+  - {t: \, h: '$$mdi:apple-keyboard-shift$$', s: '|'}
   - $$mdi:volume-off$$
   - CLCK
   - $$mdi:apple-keyboard-option$$
@@ -257,6 +257,6 @@ layers:
   - $$mdi:mouse-left-click-outline$$
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - {t: '-', h: main, s: _}
+  - {t: secondary, h: toggle}
   - {t: '=', s: +}
   - RIGHT WIN
