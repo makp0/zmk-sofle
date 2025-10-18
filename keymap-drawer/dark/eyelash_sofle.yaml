@@ -66,7 +66,7 @@ layers:
   - {t: '=', s: +}
   - INS
   secondary:
-  - F11
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F1
   - F2
   - F3
@@ -78,7 +78,7 @@ layers:
   - F8
   - F9
   - F10
-  - F12
+  - F11
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -91,7 +91,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - END
   - PRINTSCREEN
-  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - F12
   - CLCK
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -125,7 +125,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:mouse-right-click-outline$$
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {t: main, h: toggle}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: held}
   - hardware
@@ -260,7 +260,3 @@ layers:
   - {t: '-', h: secondary, s: _}
   - {t: '=', s: +}
   - RIGHT WIN
-combos:
-- p: [61, 59]
-  k: {t: main, h: toggle}
-  l: [windows]
