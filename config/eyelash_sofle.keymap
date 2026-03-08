@@ -13,8 +13,8 @@
 
 #define MAIN 0
 #define WINDOWS 1
-#define HARDWARE 2
-#define SECONDARY 3
+#define SECONDARY 2
+#define HARDWARE 3
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -48,7 +48,7 @@
 &kp TAB     &kp Q             &kp W         &kp E         &kp R      &kp T      &mmv MOVE_DOWN   &kp Y      &kp U          &kp I        &kp O      &kp P     &kp RIGHT_BRACKET
 &kp ESCAPE  &kp A             &kp S         &kp D         &kp F      &kp G      &mmv MOVE_LEFT   &kp H      &kp J          &kp K        &kp L      &kp SEMI  &kp SQT
 &kp LSHFT   &kp Z             &kp X         &kp C         &kp V      &kp B      &mmv MOVE_RIGHT  &kp N      &kp M          &kp COMMA    &kp DOT    &kp FSLH  &mt RSHIFT BACKSLASH
-&kp C_MUTE  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &kp DEL    &mkp LCLK        &kp ENTER  &kp BACKSPACE  &lt 3 MINUS  &kp EQUAL  &kp INS
+&kp C_MUTE  &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &kp DEL    &mkp LCLK        &kp ENTER  &kp BACKSPACE  &lt SECONDARY MINUS  &kp EQUAL  &kp INS
             >;
         };
 
@@ -59,7 +59,18 @@
 &trans         &trans  &trans        &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans         &trans
 &kp CAPS       &trans  &trans        &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans         &trans
 &trans         &trans  &trans        &trans            &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans         &trans
-&trans         &mo 3   &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp RIGHT_WIN
+&trans         &mo HARDWARE   &kp LEFT_ALT  &kp LEFT_CONTROL  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &kp RIGHT_WIN
+            >;
+        };
+
+        secondary_layer {
+            label = "secondary";
+            bindings = <
+&trans    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &trans     &kp F6     &kp F7    &kp F8    &kp F9     &kp F10          &kp F11
+&trans    &none   &none   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp PRINTSCREEN  &kp F12
+&kp CLCK  &none   &none   &none   &none   &none     &trans     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &none            &none
+&trans    &none   &none   &none   &none   &none     &trans     &none      &none     &none     &none      &none            &none
+&none     &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &to 0      &trans    &none     &mo HARDWARE  &to 1
             >;
         };
 
@@ -74,16 +85,6 @@
             >;
         };
 
-        secondary_layer {
-            label = "secondary";
-            bindings = <
-&trans    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &trans     &kp F6     &kp F7    &kp F8    &kp F9     &kp F10          &kp F11
-&trans    &none   &none   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END    &kp PRINTSCREEN  &kp F12
-&kp CLCK  &none   &none   &none   &none   &none     &trans     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &none            &none
-&trans    &none   &none   &none   &none   &none     &trans     &none      &none     &none     &none      &none            &none
-&none     &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &to 0      &trans    &none     &mo 2      &to 1
-            >;
-        };
     };
 
     conditional_layers { compatible = "zmk,conditional-layers"; };
