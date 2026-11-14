@@ -9,6 +9,17 @@ This repository contains the ZMK firmware for the Sofle keyboard.
 - RGB backlighting
 - Wireless connectivity via Bluetooth
 
+## Main-layer shortcuts
+
+- Escape: tap for Esc; hold for Right Control after 200 ms, or immediately when
+  another key is pressed. Vorssaint maps Right Control to Super
+  (Control + Option + Shift + Command), with no separate tap action.
+- Top-left key: tap for `~` (US layout); hold for Right Command.
+
+The Windows layer retains its existing bindings. If ZMK Studio has saved runtime
+keymap changes, use its **Restore Stock Settings** action after flashing to adopt
+these firmware defaults.
+
 ## Update List
 
 - 2024/12/21
