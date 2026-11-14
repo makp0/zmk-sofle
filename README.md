@@ -14,11 +14,35 @@ This repository contains the ZMK firmware for the Sofle keyboard.
 - Escape: tap for Esc; hold for Right Control after 200 ms, or immediately when
   another key is pressed. Vorssaint maps Right Control to Super
   (Control + Option + Shift + Command), with no separate tap action.
-- Top-left key: tap for `~` (US layout); hold for Right Command.
+- Top-left key: `~` (US layout), with no hold modifier.
 
 The Windows layer retains its existing bindings. If ZMK Studio has saved runtime
 keymap changes, use its **Restore Stock Settings** action after flashing to adopt
 these firmware defaults.
+
+## Entering Bluetooth firmware-update mode
+
+On the Hardware layer, press the physical **Z** key for the left half or **/** key
+for the right half. Each binding resets only its own half into the Adafruit
+nRF52 bootloader's legacy Bluetooth DFU mode (`GPREGRET = 0xa8`). The other half
+keeps running. These bindings require this firmware to be installed first.
+
+Update one half at a time using its matching firmware. Keep the other half out
+of DFU mode so that an updater cannot accidentally select it. This configuration
+keeps the existing application address (`0x26000`) and bootloader; it does not
+upgrade the bootloader or Nordic SoftDevice.
+
+The OTA packages target the legacy Adafruit DFU protocol, device type `0x0052`,
+and **S140 6.1.1** SoftDevice firmware ID `0x00b6`. These are package prerequisites,
+not a claim that the connected keyboard has that SoftDevice. Verify each half's
+bootloader/SoftDevice and preserve its `INFO_UF2.TXT` and `CURRENT.UF2` before the
+initial USB installation. Do not use the `settings_reset` image as an update.
+
+Each successful GitHub firmware build publishes the normal `firmware` UF2
+artifact and separate `ota-left-s140-6.1.1` / `ota-right-s140-6.1.1` artifacts.
+Each OTA artifact contains that half's DFU ZIP, prerequisites, source revision,
+and checksum. Use these ZIPs only after confirming the installed SoftDevice
+matches; they are not USB-flashable UF2 files.
 
 ## Update List
 

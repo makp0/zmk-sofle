@@ -9,3 +9,54 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3
 
+  ota-packages:
+    name: Package ${{ matrix.half }} for S140 6.1.1 OTA
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        include:
+          - half: left
+            image: eyelash_sofle_studio_left
+          - half: right
+            image: nice_view-eyelash_sofle_right-zmk
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Test application-only UF2 extraction
+        run: python -m unittest discover -s tests -p 'test_uf2_to_bin.py'
+      - uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          path: firmware
+      - name: Install legacy Nordic package generator
+        run: python -m pip install adafruit-nrfutil==0.5.3.post16 setuptools==80.9.0
+      - name: Generate application-only DFU package
+        env:
+          IMAGE: ${{ matrix.image }}
+          HALF: ${{ matrix.half }}
+        run: |
+          mkdir -p ota
+          python scripts/uf2_to_bin.py "firmware/${IMAGE}.uf2" "${HALF}.bin"
+          adafruit-nrfutil dfu genpkg --dev-type 0x0052 \
+            --application "${HALF}.bin" --application-version "$GITHUB_RUN_NUMBER" \
+            --sd-req 0xB6 "ota/${HALF}-s140-6.1.1-ota.zip"
+          cat > ota/REQUIRES-S140-6.1.1.txt <<EOF
+          Source: $GITHUB_SHA
+          Application version: $GITHUB_RUN_NUMBER
+          Half: $HALF
+          Requires verified Adafruit bootloader with S140 6.1.1 (FWID 0xB6).
+          Application only; code starts at 0x26000. No bootloader/SoftDevice update.
+          Not a USB UF2. Do not use unless the installed bootloader/SoftDevice match.
+          EOF
+          (cd ota && sha256sum "${HALF}-s140-6.1.1-ota.zip" > SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ota-${{ matrix.half }}-s140-6.1.1
+          path: ota/
+          if-no-files-found: error
+
