@@ -26,6 +26,7 @@ On the Hardware layer, press the physical **Z** key for the left half or **/** k
 for the right half. Each binding resets only its own half into the Adafruit
 nRF52 bootloader's legacy Bluetooth DFU mode (`GPREGRET = 0xa8`). The other half
 keeps running. These bindings require this firmware to be installed first.
+Install the matching firmware on both halves before using right-half OTA entry.
 
 Update one half at a time using its matching firmware. Keep the other half out
 of DFU mode so that an updater cannot accidentally select it. This configuration

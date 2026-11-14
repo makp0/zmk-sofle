@@ -30,7 +30,8 @@
     combos { compatible = "zmk,combos"; };
 
     behaviors {
-        ota: ota_reset {
+        // Split v0.3 forwards device names in 8 bytes plus NUL.
+        ota: ota_rst {
             compatible = "zmk,behavior-reset";
             #binding-cells = <0>;
             type = <0xa8>;
