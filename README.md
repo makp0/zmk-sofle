@@ -9,6 +9,29 @@ This repository contains the ZMK firmware for the Sofle keyboard.
 - RGB backlighting
 - Wireless connectivity via Bluetooth
 
+## Key coordinates
+
+Name physical keys `Lrc` or `Rrc`: `L`/`R` selects the left/right half,
+`r` is the row counted upward from the thumbs, and `c` is the column counted
+outward from the center. Both numbers start at 1. Coordinates stay attached
+to physical keys when their layer bindings change.
+
+- Row 1: thumb keys; row 2: bottom letter row; row 3: home row;
+  row 4: top letter row; row 5: number row.
+- Letter rows have six columns per half; thumb rows have five.
+  Encoder and pointing controls are separate from this numbering.
+- `R31` is H; `R13` is the original dash key; `L11` is the innermost
+  left thumb key.
+
+| Physical key | Main-layer tap | Main-layer hold | Secondary-layer press | Studio position (zero based) |
+|---|---|---|---|---|
+| `L11` | Dash (`-`) | Secondary | Transparent | 57 |
+| `R13` | Dash (`-`) | Secondary | Delete | 61 |
+
+Hold `L11` to access Secondary, then press `R13` for Delete. Holding `R13`
+also activates Secondary for other keys. These names are physical coordinates;
+ZMK matrix coordinates and Studio positions use their own numbering.
+
 ## Main-layer shortcuts
 
 - Escape: tap for Esc; hold for Right Control after 200 ms, or immediately when
