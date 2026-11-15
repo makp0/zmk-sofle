@@ -15,6 +15,7 @@
 #define WINDOWS 1
 #define SECONDARY 2
 #define HARDWARE 3
+#define TEST 4
 
 &mmv_input_listener { input-processors = <&zip_xy_scaler 2 1>; };
 
@@ -61,9 +62,9 @@
             bindings = <
 &kp TILDE            &kp N1            &kp N2        &kp N3        &kp N4     &kp N5     &mmv MOVE_UP     &kp N6     &kp N7         &kp N8               &kp N9     &kp N0    &kp LEFT_BRACKET
 &kp TAB              &kp Q             &kp W         &kp E         &kp R      &kp T      &mmv MOVE_DOWN   &kp Y      &kp U          &kp I                &kp O      &kp P     &kp RIGHT_BRACKET
-&esc_super RIGHT_CONTROL ESC  &kp A     &kp S         &kp D         &kp F      &kp G      &mmv MOVE_LEFT   &kp H      &kp J          &kp K                &kp L      &kp SEMI  &kp SQT
+&kp ESC  &kp A     &kp S         &kp D         &kp F      &kp G      &mmv MOVE_LEFT   &kp H      &kp J          &kp K                &kp L      &kp SEMI  &kp SQT
 &kp LSHFT            &kp Z             &kp X         &kp C         &kp V      &kp B      &mmv MOVE_RIGHT  &kp N      &kp M          &kp COMMA            &kp DOT    &kp FSLH  &mt RSHIFT BACKSLASH
-&kp C_MUTE           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &lt SECONDARY MINUS  &mkp LCLK        &kp ENTER  &kp BACKSPACE  &lt SECONDARY MINUS  &kp EQUAL  &kp INS
+&kp C_MUTE           &kp LEFT_CONTROL  &kp LEFT_ALT  &kp LEFT_GUI  &kp SPACE  &kp DEL  &mkp LCLK        &kp ENTER  &kp BACKSPACE  &lt SECONDARY MINUS  &kp EQUAL  &kp INS
             >;
         };
 
@@ -82,7 +83,7 @@
             label = "secondary";
             bindings = <
 &trans    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &trans     &kp F6     &kp F7    &kp F8    &kp F9        &kp F10          &kp F11
-&trans    &none   &none   &none   &none   &none     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END       &kp PRINTSCREEN  &kp F12
+&trans    &none   &none   &none   &none   &tog TEST     &trans     &kp PG_UP  &kp HOME  &kp UP    &kp END       &kp PRINTSCREEN  &kp F12
 &kp CLCK  &none   &none   &none   &none   &none     &trans     &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT     &none            &none
 &trans    &none   &none   &none   &none   &none     &trans     &none      &none     &none     &none         &none            &none
 &none     &trans  &trans  &trans  &trans  &trans    &mkp RCLK  &to 0      &trans    &kp DEL   &mo HARDWARE  &to 1
@@ -97,6 +98,53 @@
 &rgb_ug RGB_TOG  &rgb_ug RGB_HUI  &rgb_ug RGB_HUD  &rgb_ug RGB_SAI  &rgb_ug RGB_SAD  &rgb_ug RGB_BRI    &none  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &none         &none  &none  &none
 &none            &ota             &none            &none            &none            &none              &none  &none            &none            &none         &none  &ota   &none
 &none            &none            &none            &none            &none            &none              &none  &none            &none            &none         &none  &none
+            >;
+        };
+
+        test_layer {
+            label = "Test";
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &kp LC(LS(LA(LGUI))) &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        reserved_1 {
+            label = "Reserved 1";
+            status = "reserved";
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        reserved_2 {
+            label = "Reserved 2";
+            status = "reserved";
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+            >;
+        };
+
+        reserved_3 {
+            label = "Reserved 3";
+            status = "reserved";
+            bindings = <
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
             >;
         };
     };

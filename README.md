@@ -23,25 +23,42 @@ to physical keys when their layer bindings change.
 - `R31` is H; `R13` is the original dash key; `L11` is the innermost
   left thumb key.
 
-| Physical key | Main-layer tap | Main-layer hold | Secondary-layer press | Studio position (zero based) |
+| Physical key | Main | Secondary | Test | Studio position (zero based) |
 |---|---|---|---|---|
-| `L11` | Dash (`-`) | Secondary | Transparent | 57 |
-| `R13` | Dash (`-`) | Secondary | Delete | 61 |
+| `L36` | Escape | Caps Lock | Escape (inherited) | 26 |
+| `L11` | Delete | Delete (inherited) | Hyper modifiers | 57 |
+| `R13` | Tap dash / hold Secondary | Delete | Tap dash / hold Secondary (inherited) | 61 |
 
-Hold `L11` to access Secondary, then press `R13` for Delete. Holding `R13`
-also activates Secondary for other keys. These names are physical coordinates;
-ZMK matrix coordinates and Studio positions use their own numbering.
+Hold `R13` to access Secondary. These names are physical coordinates; ZMK
+matrix coordinates and Studio positions use their own numbering.
 
 ## Main-layer shortcuts
 
-- Escape: tap for Esc; hold for Right Control after 200 ms, or immediately when
-  another key is pressed. Vorssaint maps Right Control to Super
-  (Control + Option + Shift + Command), with no separate tap action.
+- `L36`: plain Escape, with no hold behavior.
+- `L11`: plain Delete.
 - Top-left key: `~` (US layout), with no hold modifier.
 
-The Windows layer retains its existing bindings. If ZMK Studio has saved runtime
-keymap changes, use its **Restore Stock Settings** action after flashing to adopt
-these firmware defaults.
+## Optional Test layer
+
+Hold **R13 (right dash/action)** and tap **T (L41)** to toggle Test on or off.
+The same chord is available while Test is on. Test is off at startup.
+
+Test changes only **L11** to a normal Hyper modifier key: Control + Option +
+Shift + Command. It uses `&kp LC(LS(LA(LGUI)))` directly in ZMK, with no Mac
+remapping or tap/hold decision. A tap presses and releases the modifiers;
+holding it keeps them down for a shortcut. Every other Test binding is
+transparent, including R13 and T, so the exit chord remains reachable.
+
+This source provides five normal layers plus three reserved Studio slots.
+The reserved slots have transparent defaults; Studio can add/name/remove
+experimental layers within that capacity without another firmware build.
+The first firmware update from the previous four-layer version is still needed
+to provide this capacity. Keep the first four layer IDs and their order intact.
+
+The Windows and Hardware layers retain their existing bindings. Saved Studio
+settings can shadow new source defaults after a firmware update. Back up and
+verify the whole keymap, then apply the reviewed repository bindings through
+the CLI. Do not use Restore Stock Settings as a routine update step.
 
 ## Entering Bluetooth firmware-update mode
 
